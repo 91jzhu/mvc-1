@@ -1,0 +1,16 @@
+#app1{
+    border:1px solid red;
+    width: 50vw;
+    height: 50vh;
+}
+#app1 .output{}
+#app1 .actions{}
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+*::before,*::after{
+    box-sizing: border-box;
+}
+/*# sourceMappingURL=index.9c26efc2.css.map */
