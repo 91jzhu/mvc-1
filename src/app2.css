@@ -1,0 +1,25 @@
+#app2{
+    border:1px solid red;
+}
+.nav{
+    display: flex;
+}
+li{
+    text-align: center;
+    border:1px solid blue;
+    width: 50%;
+    line-height: 20vh;
+}
+.content{
+    border:1px solid green;
+    display: flex;
+}
+.content li{
+    display: none;
+}
+li.active{
+    display: block;
+}
+li.selected{
+    background-color: cyan;
+}

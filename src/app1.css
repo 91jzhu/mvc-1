@@ -1,7 +1,19 @@
 #app1{
-    border:1px solid red;
-    width: 50vw;
-    height: 50vh;
+    border:1px solid blue
 }
-#app1 .output{}
-#app1 .actions{}
+.output{
+    margin-top: 20vh;
+    font-size: 40px;
+    text-align:center;
+}
+.actions{
+    margin-top: 5vh;
+    display: flex;
+    justify-content: space-around;
+}
+button{
+    padding:12px;
+    font-size: 36px;
+}
+
+

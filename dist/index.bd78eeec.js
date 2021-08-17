@@ -429,16 +429,20 @@ function hmrAcceptRun(bundle, id) {
 
 },{}],"30Yv7":[function(require,module,exports) {
 require("./reset.css");
+require("./app1.js");
+require("./app2.js");
+require("./app3.js");
+require("./app4.js");
+
+},{"./reset.css":"5dMMQ","./app1.js":"6OJP0","./app2.js":"1bsR9","./app3.js":"4knbM","./app4.js":"3XxMI"}],"5dMMQ":[function() {},{}],"6OJP0":[function(require,module,exports) {
 require("./app1.css");
 var _jquery = require("jquery");
 var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
 var _jqueryDefault = _parcelHelpers.interopDefault(_jquery);
-const $button1 = _jqueryDefault.default("#add");
-const $button2 = _jqueryDefault.default("#subtract");
-const $button3 = _jqueryDefault.default("#multiply");
-const $button4 = _jqueryDefault.default("#divide");
-let number;
+const Num = localStorage.getItem("number");
+_jqueryDefault.default("#num").text(Num || 100);
 const cal = {
+  number: undefined,
   firstStep: () => {
     number = parseInt(_jqueryDefault.default("#num").text());
     return number;
@@ -446,33 +450,40 @@ const cal = {
   secondStep: () => {
     _jqueryDefault.default("#num").text(number);
   },
+  cache: () => {
+    localStorage.setItem("number", number);
+  },
   jia: () => {
     cal.firstStep();
     number++;
+    cal.cache();
     cal.secondStep();
   },
   jian: () => {
     cal.firstStep();
     number--;
+    cal.cache();
     cal.secondStep();
   },
   cheng: () => {
     cal.firstStep();
     number *= 2;
+    cal.cache();
     cal.secondStep();
   },
   chu: () => {
     cal.firstStep();
     number /= 2;
+    cal.cache();
     cal.secondStep();
   }
 };
-$button1.on("click", cal.jia());
-$button2.on("click", cal.jian());
-$button3.on("click", cal.cheng());
-$button4.on("click", cal.chu());
+_jqueryDefault.default("#add").on("click", cal.jia);
+_jqueryDefault.default("#subtract").on("click", cal.jian);
+_jqueryDefault.default("#multiply").on("click", cal.cheng);
+_jqueryDefault.default("#divide").on("click", cal.chu);
 
-},{"./reset.css":"5dMMQ","./app1.css":"11cDO","jquery":"6Oaih","@parcel/transformer-js/lib/esmodule-helpers.js":"3GKdu"}],"5dMMQ":[function() {},{}],"11cDO":[function() {},{}],"6Oaih":[function(require,module,exports) {
+},{"jquery":"6Oaih","@parcel/transformer-js/lib/esmodule-helpers.js":"3GKdu","./app1.css":"11cDO"}],"6Oaih":[function(require,module,exports) {
 var define;
 /*!
 * jQuery JavaScript Library v3.6.0
@@ -8250,6 +8261,43 @@ exports.export = function (dest, destName, get) {
     get: get
   });
 };
-},{}]},["1Ypau","30Yv7"], "30Yv7", "parcelRequire61f4")
+},{}],"11cDO":[function() {},{}],"1bsR9":[function(require,module,exports) {
+require("./app2.css");
+var _jquery = require("jquery");
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+var _jqueryDefault = _parcelHelpers.interopDefault(_jquery);
+const $nav = _jqueryDefault.default("#app2 .nav");
+const $content = _jqueryDefault.default("#app2 .content");
+$nav.on("click", "li", e => {
+  let $li = _jqueryDefault.default(e.currentTarget);
+  $li.addClass("selected").siblings().removeClass("selected");
+  const index = $li.index();
+  $content.children().eq(index).addClass("active").siblings().removeClass("active");
+});
+$nav.children().eq(0).trigger("click");
+
+},{"jquery":"6Oaih","@parcel/transformer-js/lib/esmodule-helpers.js":"3GKdu","./app2.css":"4biXF"}],"4biXF":[function() {},{}],"4knbM":[function(require,module,exports) {
+require("./app3.css");
+var _jquery = require("jquery");
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+var _jqueryDefault = _parcelHelpers.interopDefault(_jquery);
+const $square = _jqueryDefault.default(".square");
+$square.on("click", () => {
+  $square.toggleClass("active");
+});
+
+},{"./app3.css":"2MbNN","jquery":"6Oaih","@parcel/transformer-js/lib/esmodule-helpers.js":"3GKdu"}],"2MbNN":[function() {},{}],"3XxMI":[function(require,module,exports) {
+require("./app4.css");
+var _jquery = require("jquery");
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+var _jqueryDefault = _parcelHelpers.interopDefault(_jquery);
+const $circle = _jqueryDefault.default("#app4 .circle");
+$circle.on("mouseenter", () => {
+  $circle.addClass("active");
+}).on("mouseout", () => {
+  $circle.removeClass("active");
+});
+
+},{"./app4.css":"6SFnb","jquery":"6Oaih","@parcel/transformer-js/lib/esmodule-helpers.js":"3GKdu"}],"6SFnb":[function() {},{}]},["1Ypau","30Yv7"], "30Yv7", "parcelRequire61f4")
 
 //# sourceMappingURL=index.bd78eeec.js.map

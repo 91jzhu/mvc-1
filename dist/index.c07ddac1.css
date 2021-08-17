@@ -6,11 +6,95 @@
 *::before,*::after{
     box-sizing: border-box;
 }
-#app1{
-    border:1px solid red;
+body{
+    overflow: hidden;
+}
+ol,ul{
+    list-style: none;
+}
+.coat{
+    display: flex;
+    flex-wrap: wrap;
+}
+section{
     width: 50vw;
     height: 50vh;
 }
-#app1 .output{}
-#app1 .actions{}
+#app1{
+    border:1px solid blue
+}
+.output{
+    margin-top: 20vh;
+    font-size: 40px;
+    text-align:center;
+}
+.actions{
+    margin-top: 5vh;
+    display: flex;
+    justify-content: space-around;
+}
+button{
+    padding:12px;
+    font-size: 36px;
+}
+
+
+
+#app2{
+    border:1px solid red;
+}
+.nav{
+    display: flex;
+}
+li{
+    text-align: center;
+    border:1px solid blue;
+    width: 50%;
+    line-height: 20vh;
+}
+.content{
+    border:1px solid green;
+    display: flex;
+}
+.content li{
+    display: none;
+}
+li.active{
+    display: block;
+}
+li.selected{
+    background-color: cyan;
+}
+#app3 .square{
+    border:1px solid red;
+    width: 15vw;
+    margin-top: 10vw;
+    margin-left: 10vh;
+    height: 15vh;
+    transition: transform 1s;
+}
+#app3 .square.active{
+    transform: translateX(15vw);
+}
+#app3{
+    border:1px solid purple;
+}
+#app4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#app4 .circle{
+    width: 30vw;
+    height: 30vh;
+    border-radius: 50%;
+    border:1px solid blue;
+}
+@keyframes change{
+    0%{background-color: red;}
+    100%{background-color: black;}
+}
+#app4 .circle.active{
+    animation: change 2s infinite alternate linear;
+}
 /*# sourceMappingURL=index.c07ddac1.css.map */

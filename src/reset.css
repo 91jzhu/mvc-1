@@ -6,3 +6,17 @@
 *::before,*::after{
     box-sizing: border-box;
 }
+body{
+    overflow: hidden;
+}
+ol,ul{
+    list-style: none;
+}
+.coat{
+    display: flex;
+    flex-wrap: wrap;
+}
+section{
+    width: 50vw;
+    height: 50vh;
+}
